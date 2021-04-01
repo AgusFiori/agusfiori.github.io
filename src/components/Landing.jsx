@@ -14,9 +14,9 @@ import cssIcon from "../assets/cssIcon.png";
 import sassIcon from "../assets/sassIcon.png";
 import expoIcon from "../assets/expoIcon.png";
 
-const Landing = () => {
-  let backgroundMode = "dark";
-  let textColor = "white";
+const Landing = (props) => {
+  var backgroundMode = "dark";
+  var textColor = "white";
 
   return (
     <div>
@@ -32,6 +32,9 @@ const Landing = () => {
             Hi, my name is <b style={{ color: "#e31b6d" }}>Agustin Fiori</b>
           </h2>
           <h2>I'm a Full Stack Web Developer</h2>
+        </div>
+        <div class="scroll-prompt" id="js_scrollPrompt">
+          <div class="scroll-prompt-shape"></div>
         </div>
       </Container>
       <ul className="circles border-bottom border-primary">
@@ -135,4 +138,10 @@ const Landing = () => {
   );
 };
 
-export default connect(null)(Landing);
+const mapStateToProps = (state) => {
+  return {
+    theme: state.themeReducer.theme,
+  };
+};
+
+export default connect(mapStateToProps)(Landing);

@@ -24,7 +24,7 @@ const Projects = () => {
             axis="horizontal"
             autoPlay="true"
             centerMode="true"
-            emulateTouch="true"
+            emulateTouch={true}
             infiniteLoop="true"
             interval="5000"
             stopOnHover="true"
